@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="foreword.html"><strong aria-hidden="true">1.</strong> Foreword</a></li><li class="chapter-item expanded "><a href="instruction.html"><strong aria-hidden="true">2.</strong> Instruction</a></li><li class="chapter-item expanded "><a href="variable.html"><strong aria-hidden="true">3.</strong> Define variable</a></li><li class="chapter-item expanded "><a href="function.html"><strong aria-hidden="true">4.</strong> Define function</a></li><li class="chapter-item expanded "><a href="pattern.html"><strong aria-hidden="true">5.</strong> Pattern matching</a></li><li class="chapter-item expanded "><a href="lambda.html"><strong aria-hidden="true">6.</strong> Lambda expression</a></li><li class="chapter-item expanded "><a href="block.html"><strong aria-hidden="true">7.</strong> Code block</a></li><li class="chapter-item expanded "><a href="lazy.html"><strong aria-hidden="true">8.</strong> Lazy Evaluation</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="foreword.html"><strong aria-hidden="true">1.</strong> Foreword</a></li><li class="chapter-item expanded "><a href="setup.html"><strong aria-hidden="true">2.</strong> Setup</a></li><li class="chapter-item expanded "><a href="instruction.html"><strong aria-hidden="true">3.</strong> Instruction</a></li><li class="chapter-item expanded "><a href="variable.html"><strong aria-hidden="true">4.</strong> Define variable</a></li><li class="chapter-item expanded "><a href="function.html"><strong aria-hidden="true">5.</strong> Define function</a></li><li class="chapter-item expanded "><a href="pattern.html"><strong aria-hidden="true">6.</strong> Pattern matching</a></li><li class="chapter-item expanded "><a href="lambda.html"><strong aria-hidden="true">7.</strong> Lambda expression</a></li><li class="chapter-item expanded "><a href="block.html"><strong aria-hidden="true">8.</strong> Code block</a></li><li class="chapter-item expanded "><a href="lazy.html"><strong aria-hidden="true">9.</strong> Lazy evaluation</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -181,6 +181,19 @@ Haskell is conservertive and mathematical functional programming language.
 On the other hand, Lisp has enthusiastic programmer who love that beatiful S-expression.</p>
 <p>What do you think what happen if fusion Haskell and Lisp. It may created awesome language.
 So, the fusion is this, Pravda!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="setup"><a class="header" href="#setup">Setup</a></h1>
+<p>Installing is necessary process to programming Pravda.
+In this chapter, let it setup Pravda environment quickly.</p>
+<p>First, clone the GitHub repository of Pravda iterpreter to download.</p>
+<pre><code class="language-sh">git clone https://github.com/pravda-lang/pravda.git
+</code></pre>
+<p>And, move to its directory, enter below command to install.</p>
+<pre><code>cargo install --path .
+</code></pre>
+<p>If enter below command then show interactive console (the "REPL"), it was success!.</p>
+<pre><code>pravda
+</code></pre>
+<p>You may usually use the REPL to run Pravda program.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="instruction"><a class="header" href="#instruction">Instruction</a></h1>
 <p>Every instructions such even operator "+", are function in Pravda.</p>
 <p>It split by space. operator comes first, arguments comes after.</p>
