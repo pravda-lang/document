@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="foreword.html"><strong aria-hidden="true">1.</strong> Foreword</a></li><li class="chapter-item expanded "><a href="setup.html"><strong aria-hidden="true">2.</strong> Setup</a></li><li class="chapter-item expanded "><a href="instruction.html"><strong aria-hidden="true">3.</strong> Instruction</a></li><li class="chapter-item expanded "><a href="variable.html"><strong aria-hidden="true">4.</strong> Define variable</a></li><li class="chapter-item expanded "><a href="function.html"><strong aria-hidden="true">5.</strong> Define function</a></li><li class="chapter-item expanded "><a href="pattern.html"><strong aria-hidden="true">6.</strong> Pattern matching</a></li><li class="chapter-item expanded "><a href="lambda.html"><strong aria-hidden="true">7.</strong> Lambda expression</a></li><li class="chapter-item expanded "><a href="block.html"><strong aria-hidden="true">8.</strong> Code block</a></li><li class="chapter-item expanded "><a href="lazy.html"><strong aria-hidden="true">9.</strong> Lazy evaluation</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="foreword.html"><strong aria-hidden="true">1.</strong> Foreword</a></li><li class="chapter-item expanded "><a href="setup.html"><strong aria-hidden="true">2.</strong> Setup</a></li><li class="chapter-item expanded "><a href="instruction.html"><strong aria-hidden="true">3.</strong> Instruction</a></li><li class="chapter-item expanded "><a href="variable.html"><strong aria-hidden="true">4.</strong> Define variable</a></li><li class="chapter-item expanded "><a href="block.html"><strong aria-hidden="true">5.</strong> Code block</a></li><li class="chapter-item expanded "><a href="lazy.html"><strong aria-hidden="true">6.</strong> Lazy evaluation</a></li><li class="chapter-item expanded "><a href="function.html"><strong aria-hidden="true">7.</strong> Define function</a></li><li class="chapter-item expanded "><a href="pattern.html"><strong aria-hidden="true">8.</strong> Pattern matching</a></li><li class="chapter-item expanded "><a href="partial.html"><strong aria-hidden="true">9.</strong> Partial application</a></li><li class="chapter-item expanded "><a href="lambda.html"><strong aria-hidden="true">10.</strong> Lambda expression</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -210,31 +210,6 @@ Because it's to make Pravda more easy. I think variable binding that can see in 
 <pre><code>x = 5
 </code></pre>
 <p>This code defines variable "x" in number value 5.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="define-function"><a class="header" href="#define-function">Define function</a></h1>
-<p>It split by equal same to define variable case.
-the left is function header, split by space.
-first is function is identify, others are argument.</p>
-<pre><code>x2 n = * n 2
-</code></pre>
-<p>If you want to use mutable length argument, prefix <code>~</code> argument name.
-The passed mutable length argument will be list.</p>
-<pre><code>joinx ~list = join list "x"
-</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="pattern-matching"><a class="header" href="#pattern-matching">Pattern matching</a></h1>
-<p>If you set value as function argument, it become pattern It only call when passed argument is matched.</p>
-<pre><code>fact 0 = 1;
-</code></pre>
-<p>If you set normal symbol as function argument. It call any case without configured pattern.</p>
-<pre><code>fact n = * n (fact (- n 1))
-</code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="lambda-expression"><a class="header" href="#lambda-expression">Lambda expression</a></h1>
-<p>It starts with <code>lambda</code> and surround by parentheses.
-Inside parentheses is split by <code>-&gt;</code>, after is same to function.</p>
-<pre><code>lambda(n -&gt; * n 2)
-</code></pre>
-<p>Lambda expression is usually used in function <code>map</code></p>
-<pre><code>map (range 10) lambda(n -&gt; * n 2)
-</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="code-block"><a class="header" href="#code-block">Code block</a></h1>
 <p>If you surround by brace, the inside code will be block.
 The last expression in the block returns value.</p>
@@ -268,6 +243,37 @@ eval x
        print i;
     }}}
 })
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="define-function"><a class="header" href="#define-function">Define function</a></h1>
+<p>It split by equal same to define variable case.
+the left is function header, split by space.
+first is function is identify, others are argument.</p>
+<pre><code>x2 n = * n 2
+</code></pre>
+<p>If you want to use mutable length argument, prefix <code>~</code> argument name.
+The passed mutable length argument will be list.</p>
+<pre><code>joinx ~list = join list "x"
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pattern-matching"><a class="header" href="#pattern-matching">Pattern matching</a></h1>
+<p>If you set value as function argument, it become pattern It only call when passed argument is matched.</p>
+<pre><code>fact 0 = 1;
+</code></pre>
+<p>If you set normal symbol as function argument. It call any case without configured pattern.</p>
+<pre><code>fact n = * n (fact (- n 1))
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="partial-application"><a class="header" href="#partial-application">Partial application</a></h1>
+<p>If you provide too shortage argument to function, it returns partial applicated function.</p>
+<pre><code>add a b = + a b;
+add 1
+</code></pre>
+<p>This code returns function that partial applicated by argument <code>a</code> in number 1.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="lambda-expression"><a class="header" href="#lambda-expression">Lambda expression</a></h1>
+<p>It starts with <code>lambda</code> and surround by parentheses.
+Inside parentheses is split by <code>-&gt;</code>, after is same to function.</p>
+<pre><code>lambda(n -&gt; * n 2)
+</code></pre>
+<p>Lambda expression is usually used in function <code>map</code></p>
+<pre><code>map (range 10) lambda(n -&gt; * n 2)
 </code></pre>
 
                     </main>
