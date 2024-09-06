@@ -3,7 +3,7 @@
 Installing is necessary process to programming Pravda.
 In this chapter, let it setup Pravda environment quickly.
 
-First, clone the GitHub repository of Pravda iterpreter to download.
+First, clone the GitHub repository of Pravda interpreter to download.
 ```sh
 git clone https://github.com/pravda-lang/pravda.git
 ```
