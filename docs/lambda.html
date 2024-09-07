@@ -174,11 +174,12 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="lambda-expression"><a class="header" href="#lambda-expression">Lambda expression</a></h1>
-<p>It starts with <code>lambda</code> and surround by parentheses.
+<p>It starts with <code>lambda</code> or <code>\</code> and surround by parentheses.
 Inside parentheses is split by <code>-&gt;</code>, after is same to function.</p>
 <pre><code>lambda(n -&gt; * n 2)
+\(n -&gt; * n 2)
 </code></pre>
-<p>Lambda expression is usually used in function <code>map</code></p>
+<p>Lambda expression is usually used in function <code>map</code> etc in iterator.</p>
 <pre><code>map (range 10) lambda(n -&gt; * n 2)
 </code></pre>
 

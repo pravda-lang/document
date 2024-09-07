@@ -174,14 +174,19 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="lazy-evaluation"><a class="header" href="#lazy-evaluation">Lazy evaluation</a></h1>
-<p>If you want to do lazy evaluation,  prefix <code>@</code> to the expression.
-function <code>eval</code> to evaluate it.</p>
+<p>If you want to do lazy evaluation,  prefix <code>lazy</code> or <code>@</code> to the expression.</p>
 <pre><code>x = @{
     + 1 (input)
 };
-eval x
+y = lazy{
+    + 1 (input)
+}
 </code></pre>
-<p>It's usually used in function <code>if</code> to conditional branches.</p>
+<p>function <code>eval</code> to evaluate it.</p>
+<pre><code>eval x
+</code></pre>
+<p>It's usually used in function <code>if</code> to conditional branches.
+Because, function <code>if</code> needs block as arguments.</p>
 <pre><code>for (range 100) lambda(i -&gt; {
     i = + i 1;
     if (equal 0 (% i 15)) @{

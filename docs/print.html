@@ -223,14 +223,19 @@ The last expression in the block returns value.</p>
 </code></pre>
 <p>In this code, the block returns 3. variable "b" defined in the block is not allowed to access in outside.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lazy-evaluation"><a class="header" href="#lazy-evaluation">Lazy evaluation</a></h1>
-<p>If you want to do lazy evaluation,  prefix <code>@</code> to the expression.
-function <code>eval</code> to evaluate it.</p>
+<p>If you want to do lazy evaluation,  prefix <code>lazy</code> or <code>@</code> to the expression.</p>
 <pre><code>x = @{
     + 1 (input)
 };
-eval x
+y = lazy{
+    + 1 (input)
+}
 </code></pre>
-<p>It's usually used in function <code>if</code> to conditional branches.</p>
+<p>function <code>eval</code> to evaluate it.</p>
+<pre><code>eval x
+</code></pre>
+<p>It's usually used in function <code>if</code> to conditional branches.
+Because, function <code>if</code> needs block as arguments.</p>
 <pre><code>for (range 100) lambda(i -&gt; {
     i = + i 1;
     if (equal 0 (% i 15)) @{
@@ -268,11 +273,12 @@ add 1
 </code></pre>
 <p>This code returns function that partial applicated by argument <code>a</code> in number 1.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="lambda-expression"><a class="header" href="#lambda-expression">Lambda expression</a></h1>
-<p>It starts with <code>lambda</code> and surround by parentheses.
+<p>It starts with <code>lambda</code> or <code>\</code> and surround by parentheses.
 Inside parentheses is split by <code>-&gt;</code>, after is same to function.</p>
 <pre><code>lambda(n -&gt; * n 2)
+\(n -&gt; * n 2)
 </code></pre>
-<p>Lambda expression is usually used in function <code>map</code></p>
+<p>Lambda expression is usually used in function <code>map</code> etc in iterator.</p>
 <pre><code>map (range 10) lambda(n -&gt; * n 2)
 </code></pre>
 
